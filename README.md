@@ -58,21 +58,21 @@ IAM_USER_SECRET_DS_USER_BOOK_KEEPING=
 
   ##### AWS IAM User Config
 
-Data sources would be assigned a folder in the AWS S3 bucket. AWS IAM user name is used to determine the bucket folder where the file is uploaded.
+  Data sources would be assigned a folder in the AWS S3 bucket. AWS IAM user name is used to determine the bucket folder where the file is uploaded.
 
-```
-AWS_USER_CONFIG:
-  DS_USER_PRODUCT:
-    S3_PREFIX: "ds_user_product" # AWS S3 prefix or folder
-    S3_BUCKET: "df-data-in"  # AWS S3 bucket name
-    S3_REGION: "ap-south-1"  # AWS S3 region
-  DS_USER_DEMOGRAPHIC:
-    S3_PREFIX: "ds_user_demographic"
-    S3_BUCKET: "df-data-in"
-    S3_REGION: "ap-south-1"
-  DS_USER_BOOK_KEEPING:
-    S3_PREFIX: "ds_user_book_keeping"
-    S3_BUCKET: "df-data-in"
-    S3_REGION: "ap-south-1"
+  ```
+  AWS_USER_CONFIG:
+    DS_USER_PRODUCT:
+      S3_PREFIX: "ds_user_product" # AWS S3 prefix or folder
+      S3_BUCKET: "df-data-in"  # AWS S3 bucket name
+      S3_REGION: "ap-south-1"  # AWS S3 region
+    DS_USER_DEMOGRAPHIC:
+      S3_PREFIX: "ds_user_demographic"
+      S3_BUCKET: "df-data-in"
+      S3_REGION: "ap-south-1"
+    DS_USER_BOOK_KEEPING:
+      S3_PREFIX: "ds_user_book_keeping"
+      S3_BUCKET: "df-data-in"
+      S3_REGION: "ap-south-1"
 
-```
+  ```
