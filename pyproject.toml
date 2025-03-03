@@ -48,7 +48,7 @@ test = [
 ]
 
 [project.scripts]
-fm-app-cli = "fm_app.fm_app_cli:main"
+#fm-app-cli = "fm_app.fm_app_cli:main"
 fm-app-api = "fm_app.fm_app_api:main"
 fm-app-ui = "fm_app.fm_app_ui_script:main"
 
