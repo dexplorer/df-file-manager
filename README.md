@@ -37,7 +37,7 @@ IAM_USER_SECRET_DS_USER_BOOK_KEEPING=
     fm-app-ui
   ```
 
-- **Catalog a file to AWS S3 bucket via CLI with IAM user name**:
+- **Upload a file to AWS S3 bucket via CLI with IAM user name**:
   ```sh
     fm-app-ui --aws_iam_user_name ds_user_product
   ```
