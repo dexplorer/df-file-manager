@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools >= 64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fm_app"
+version = "0.0.1"
+authors = [
+  { name="Rajakumaran Arivumani", email="author@example.com" },
+]
+description = "File manager app package"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+#license = "MIT"
+#license-files = ["LICEN[CS]E*"]
+dependencies = [
+  # app specific", 
+  "pydantic", 
+  "boto3", 
+  "awswrangler", 
+  "streamlit", 
+  "python-multipart",
+  # my packages
+  #"utils @ git+https://github.com/dexplorer/utils",
+  #"metadata @ git+https://github.com/dexplorer/df-metadata",
+]
+keywords = ["file", "manager", "etl", "elt", "framework", "tool"]
+
+[project.optional-dependencies]
+api = [
+  "fastapi" , 
+  "uvicorn[standard]", 
+  ]
+cli = [
+  "click",
+]
+test = [
+  # standard dev tools
+  "pytest",
+  "pytest-cov",
+  "pylint",
+  "black",
+  "ipython",
+]
+
+[project.scripts]
+fm-app-cli = "fm_app.fm_app_cli:main"
+fm-app-api = "fm_app.fm_app_api:main"
+fm-app-ui = "fm_app.fm_app_ui_script:main"
+
+[project.urls]
+Homepage = "https://profile.rajakumaran.in"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/dexplorer/df-file-manager.git"
+Issues = "https://github.com/dexplorer/df-file-manager/issues"
+Changelog = "https://github.com/dexplorer/df-file-manager/blob/master/CHANGELOG.md"

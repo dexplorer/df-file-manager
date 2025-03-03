@@ -1,0 +1,24 @@
+appName: fm_app
+logLevel: INFO
+CONFIG:
+  APP_CONFIG_DIR: "APP_ROOT_DIR/cfg"
+  APP_LOG_DIR: "APP_ROOT_DIR/log"
+  APP_DATA_IN_DIR: "APP_ROOT_DIR/data/in"
+  APP_DATA_OUT_DIR: "APP_ROOT_DIR/data/out"
+  APP_SQL_SCRIPT_DIR: "APP_ROOT_DIR/sql"
+  APP_IMG_OUT_DIR: "APP_ROOT_DIR/plot"
+  HIVE_WAREHOUSE_DIR_OLD: "APP_ROOT_DIR/data/user/hive/warehouse"
+  HIVE_WAREHOUSE_DIR: "APP_ROOT_DIR/spark-warehouse"
+AWS_USER_CONFIG:
+  DS_USER_PRODUCT:
+    S3_PREFIX: "ds_user_product" # AWS S3 prefix or folder
+    S3_BUCKET: "df-data-in"  # AWS S3 bucket name
+    S3_REGION: "ap-south-1"  # AWS S3 region
+  DS_USER_DEMOGRAPHIC:
+    S3_PREFIX: "ds_user_demographic"
+    S3_BUCKET: "df-data-in"
+    S3_REGION: "ap-south-1"
+  DS_USER_BOOK_KEEPING:
+    S3_PREFIX: "ds_user_book_keeping"
+    S3_BUCKET: "df-data-in"
+    S3_REGION: "ap-south-1"
