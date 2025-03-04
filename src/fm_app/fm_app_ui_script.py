@@ -36,6 +36,7 @@ def main():
     logging.info(args)
     logging.info(os.environ)
     logging.info(sc.config)
+    logging.info(vars(sc))
 
     process = subprocess.run(
         [

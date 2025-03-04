@@ -97,6 +97,7 @@ def main():
     logging.info("Configs are set")
     logging.info(os.environ)
     logging.info(sc.config)
+    logging.info(vars(sc))
 
     logging.info("Starting the API service")
 
