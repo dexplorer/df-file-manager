@@ -20,12 +20,10 @@ def main():
 
     # Get the arguments
     args = vars(parser.parse_args())
-    logging.info(args)
     aws_iam_user_name = args["aws_iam_user_name"]
 
     # Load the environment variables from .env file
     load_dotenv()
-    logging.info(os.environ)
 
     # Fail if env variable is not set
     sc.env = os.environ["ENV"]
@@ -35,6 +33,9 @@ def main():
     script_name = os.path.splitext(os.path.basename(__file__))[0]
     ufl.config_logger(log_file_path_name=f"{sc.log_file_path}/{script_name}.log")
     logging.info("Configs are set")
+    logging.info(args)
+    logging.info(os.environ)
+    logging.info(sc.config)
 
     process = subprocess.run(
         [
