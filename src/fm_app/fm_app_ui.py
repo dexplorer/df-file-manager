@@ -41,7 +41,7 @@ def upload_file(file_path: str, aws_iam_user_name: str, api_endpoint: str):
         files=files,
         timeout=2,
     )
-    print("POST request response status code", response.status_code)
+    logging.info("POST request response status code %d", response.status_code)
 
     if not response.ok:
         logging.info("Type: %s", response.headers["Content-Type"])
@@ -53,7 +53,7 @@ def upload_file(file_path: str, aws_iam_user_name: str, api_endpoint: str):
     # Check if the file upload was successful (status code 200)
     if response.status_code == 200:
         # Print the API response for debugging
-        print(response.json())
+        logging.info(response.json())
         # Return the file path returned by the API
         return response.json()["file_path"]
 
@@ -74,17 +74,15 @@ def main():
     load_dotenv()
 
     # Fail if env variable is not set
-    sc.env = os.environ["ENV"]
-    sc.app_root_dir = os.environ["APP_ROOT_DIR"]
     sc.load_config()
 
     BACKEND_URL = os.environ["BACKEND_URL"]
     # API endpoint for file upload
     api_endpoint = BACKEND_URL + "/upload-file"
-    print("api end point", api_endpoint)
+    # print("api end point", api_endpoint)
 
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    ufl.config_logger(log_file_path_name=f"{sc.log_file_path}/{script_name}.log")
+    ufl.config_logger(log_file_path_name=f"{sc.app_log_dir}/{script_name}.log")
     logging.info("Configs are set")
     logging.info(args)
     logging.info(os.environ)

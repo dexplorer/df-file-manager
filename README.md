@@ -12,7 +12,8 @@ Create a .env file with the following variables.
 
 ```
 ENV=dev
-APP_ROOT_DIR=
+APP_ROOT_DIR=/workspaces/df-file-manager
+NAS_ROOT_DIR=/workspaces/nas
 BACKEND_URL=
 IAM_USER_ACCESS_KEY_DS_USER_PRODUCT=
 IAM_USER_SECRET_DS_USER_PRODUCT=
@@ -36,6 +37,8 @@ IAM_USER_SECRET_DS_USER_BOOK_KEEPING=
     fm-app-ui
   ```
 
+UI should come up at http://localhost:8501 or http://<hostname>:8501
+
 - **Upload a file to AWS S3 bucket via CLI with IAM user name**:
   ```sh
     fm-app-ui --aws_iam_user_name ds_user_product
@@ -47,12 +50,13 @@ IAM_USER_SECRET_DS_USER_BOOK_KEEPING=
     fm-app-api
   ```
 
+API should come up at http://localhost:8080 or http://<hostname>:8080
+
   Note: Currently, the demo API endpoint is not configured to handle client authorization. So, change the port visibility from 'Private' to 'Public' for testing purposes. On the other hand, you could enhance the application to handle client authorization. See FastAPI documentation for reference. 
 
   ##### Invoke the API from Swagger Docs interface
   ```sh
     https://<host name with port number>/docs
-
   ```
 
   ##### AWS IAM User Config

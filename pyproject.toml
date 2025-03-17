@@ -26,8 +26,13 @@ dependencies = [
   "python-multipart",
   "python-dotenv", 
   # my packages
+  "utils",
+  "metadata",
+  "config",
+  # my packages
   #"utils @ git+https://github.com/dexplorer/utils",
   #"metadata @ git+https://github.com/dexplorer/df-metadata",
+  #"config @ git+https://github.com/dexplorer/df-config",
 ]
 keywords = ["file", "manager", "etl", "elt", "framework", "tool"]
 

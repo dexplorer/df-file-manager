@@ -56,7 +56,7 @@ async def upload_file_to_s3(data_file: UploadFile, aws_iam_user_name: str) -> li
         raise RuntimeError("Unable to create AWS S3 session.")
 
     file_name = data_file.filename.split("/")[-1]
-    print("Data file name", file_name)
+    # print("Data file name", file_name)
     try:
         with open(f"{data_file.filename}", "wb") as out_file:
             content = await data_file.read()  # async read

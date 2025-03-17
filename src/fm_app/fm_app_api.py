@@ -27,6 +27,7 @@ app = FastAPI()
 origins = [
     "http://localhost:8501",
     "https://studious-fiesta-6j4pjrpv47fx555-8501.app.github.dev",
+    "http://ec2-13-233-72-225.ap-south-1.compute.amazonaws.com:8501",
 ]
 
 # Add CORS middleware to handle Cross-Origin Resource Sharing
@@ -88,12 +89,10 @@ def main():
     load_dotenv()
 
     # Fail if env variable is not set
-    sc.env = os.environ["ENV"]
-    sc.app_root_dir = os.environ["APP_ROOT_DIR"]
     sc.load_config()
 
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    ufl.config_logger(log_file_path_name=f"{sc.log_file_path}/{script_name}.log")
+    ufl.config_logger(log_file_path_name=f"{sc.app_log_dir}/{script_name}.log")
     logging.info("Configs are set")
     logging.info(os.environ)
     logging.info(sc.config)
@@ -105,7 +104,7 @@ def main():
         app,
         port=8080,
         host="0.0.0.0",
-        log_config=f"{sc.cfg_file_path}/api_log.ini",
+        log_config=f"{sc.app_config_dir}/api_log.ini",
     )
 
     logging.info("Stopping the API service")
